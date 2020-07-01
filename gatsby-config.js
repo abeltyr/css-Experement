@@ -1,11 +1,37 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `LEARNING GATSBY`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `Abel`,
+    blogs: [
+      {
+        title: "first blog",
+        excerpt: "this the blog 1",
+        author: "abel",
+        slug: "first-blog",
+        description:
+          "this is my first blog post. i wrote it with normal graphql",
+      },
+      {
+        title: "second blog",
+        excerpt: "this the blog 2",
+        author: "abel",
+        slug: "second-blog",
+        description:
+          "this is my second blog post. i wrote it with normal graphql",
+      },
+      {
+        title: "new blog",
+        excerpt: "this the blog 3",
+        author: "abel",
+        slug: "new-blog",
+        description: "this is my new blog post. i wrote it with normal graphql",
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
