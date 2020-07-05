@@ -10,6 +10,7 @@ const usePosts = () => {
                         author
                         slug
                         description
+                        image
                     }
                 }
             }
@@ -22,6 +23,7 @@ const usePosts = () => {
         author: post.author,
         slug: post.slug,
         description: post.description,
+        image: post.image
     }))
 }
 

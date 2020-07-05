@@ -48,10 +48,10 @@ const Header = ({ siteTitle }) => (
         margin-top: 0;
       `}
     >
-      <NavLink to="/" activeClassName="current-page">
+      <NavLink to="/" fontWeight="bold" activeClassName="current-page">
         Home
       </NavLink>
-      <NavLink to="/page-2" activeClassName="current-page">
+      <NavLink to="/page-2" fontWeight="bold" activeClassName="current-page">
         About
       </NavLink>
     </nav>
