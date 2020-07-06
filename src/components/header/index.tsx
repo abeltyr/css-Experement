@@ -22,7 +22,7 @@ const Header = ({ siteTitle }) => {
   return (
     <HeaderContainer>
       <LeftHeaderContainer>
-        <Img className="logo" fluid={logo.sharp.fluid} alt="HEADER LOGO" />
+        <Img className="logo" fluid={logo && logo.sharp.fluid} alt="HEADER LOGO" />
       </LeftHeaderContainer>
       <RightHeaderContainer>
         <NavLink to="/" activeClassName="current-page">

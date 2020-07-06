@@ -43,7 +43,7 @@ export const RightFooterContainer = styled("div")`
   p {
     margin-bottom: 1px;
   }
-  span:first-child {
+  span:first-of-type {
     padding-left: 0px;
     border-left: 0px solid black;
     margin-right: 5px;
