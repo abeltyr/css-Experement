@@ -44,6 +44,7 @@ const About = () => {
           <Button text="Join us"
             backgroundColor="#FCCE7F" textColor="#562703" curve="6px"
             loading={false}
+            icon=""
             onClick={() => { }} />
 
         </div>

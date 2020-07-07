@@ -20,9 +20,6 @@ export const MainContainer = styled("div")`
   width: 100vw;
   height: 100vh;
   font-family: freight sans-serif;
-  /* display: grid; */
-  /* grid-template-rows: 10vh 1fr 1fr; */
-
   padding-left: 7.5vw;
   padding-right: 7.5vw;
   padding-top: 5vh;
@@ -74,7 +71,7 @@ export const MainContainer = styled("div")`
       margin-top: 5vh;
       p:first-of-type {
         font-size: 30px;
-        font-weight: 1000;
+        font-weight: 900;
         line-height: 35px;
       }
       p:last-of-type {
