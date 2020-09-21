@@ -31,8 +31,11 @@ const Header = ({ siteTitle }) => {
         <NavLink to="/quote" activeClassName="current-page">
           QUOTE
         </NavLink>
-        <NavLink to="/404" activeClassName="current-page">
-          NEW
+        <NavLink to="/landing" activeClassName="current-page">
+          LANDING
+        </NavLink>
+        <NavLink to="/book" activeClassName="current-page">
+          BOOK
         </NavLink>
       </RightHeaderContainer>
     </HeaderContainer>

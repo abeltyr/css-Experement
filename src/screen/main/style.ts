@@ -1,118 +1,99 @@
 import styled from "@emotion/styled"
 interface imageProsData {
-  image: string
+  image?: string
 }
-
 export const MainContainer = styled("div")`
-  overflow: hidden;
+  box-sizing: content-box;
   width: 100vw;
-  height: 50vh;
-  border-bottom: 1px solid #eeeeee99;
-  @media screen and (max-width: 800px) {
-    height: 100vh;
-    border-bottom: 0px;
-  }
-`
-
-export const LeftContainer = styled("div")`
+  height: 80vh;
   overflow: hidden;
-  width: 50vw;
-  float: left;
-  height: 50vh;
-  padding-left: 7.5vw;
-
-  .logoContainer {
-    position: absolute;
-  }
-
-  .logo {
-    margin-top: 20px;
-    width: 100px;
-  }
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url(${(props: imageProsData) => props.image});
+  background-size: 75vw 75vh;
+  background-repeat: no-repeat;
+  background-position: 12.5vw;
   .midText {
-    width: 85%;
-    height: 50vh;
-    color: #252d3b;
-    padding-top: 13vh;
-    p:first-of-type {
-      font-size: 38px;
-      font-weight: 400;
-      line-height: 50px;
-    }
-    p:last-of-type {
-      font-weight: 300;
-      font-size: 24px;
-      margin-top: 2.5vh;
-    }
+    /* color: #f58058; */
+    font-size: 2rem;
+    font-weight: 400;
+    z-index: 1;
   }
-
   .lowerText {
-    margin-top: 5vh;
-    justify-content: flex-end;
-    justify-items: flex-end;
-  }
-
-  @media screen and (max-width: 800px) {
-    width: 100vw;
-    height: 100vh;
-    background-image: url(${(props: imageProsData) => props.image || ""});
-    background-size: cover;
-    background-position: 50%;
-    .midText {
-      width: 75%;
-      padding-top: 15vh;
-      p:first-of-type {
-        font-size: 48px;
-      }
-      p:last-of-type {
-        font-size: 34px;
-      }
-    }
-    .lowerText {
-      margin-top: 5vh;
-    }
-  }
-
-  @media screen and (max-width: 500px) {
-    width: 100vw;
-    height: 100vh;
-    display: block;
-    background-image: url(${(props: imageProsData) => props.image || ""});
-    background-size: cover;
-    background-position: 50%;
-    .midText {
-      width: 90%;
-      padding-top: 20vh;
-      p:first-of-type {
-        font-size: 38px;
-      }
-      p:last-of-type {
-        font-size: 24px;
-      }
-    }
-    .lowerText {
-      margin-top: 5vh;
-    }
-  }
-
-  @media screen and (max-height: 500px) {
-    width: 100vw;
-    height: 100vh;
-    display: block;
-    .midText {
-      width: 90%;
-      padding-top: 25vh;
-    }
+    /* color: #f58058; */
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin-top: 2vh;
+    margin-bottom: 8vh;
+    font-size: 1.2rem;
+    font-weight: 300;
+    z-index: 1;
   }
 `
-
-export const RightContainer = styled("div")`
+export const BackgroundContainer = styled("div")`
+  width: 100vw;
+  height: 80vh;
+  margin-top: -80vh;
   overflow: hidden;
-  width: 50vw;
-  float: right;
-  height: 50vh;
-  background-image: url(${(props: imageProsData) => props.image || ""});
-  background-size: cover;
-  background-position: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    color: #fff;
+    /* margin-top: -5vh;
+    font-size: 18rem; */
+    margin-top: -10vh;
+    font-size: 14rem;
+    text-shadow: 1px 1px 20px #eeeeee;
+    font-weight: bold;
+    z-index: 0;
+  }
+`
+export const BlockContainer = styled("div")`
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-left: 12.5vw;
+  padding-right: 12.5vw;
+  padding-bottom: 10vh;
+  grid-row-gap: 5vh;
+  grid-column-gap: 5vh;
+  .card {
+    background: #f7f7f7;
+    height: 35vh;
+    width: 35vw;
+    overflow: hidden;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    .displayImage {
+      margin-top: 5vh;
+      width: 30vw;
+      height: 20vh;
+      margin-bottom: 2.5vh;
+    }
+    p {
+      width: 30vw;
+      color: #d8d8d8dd;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+  }
+  .card:last-child {
+    background: transparent;
+    overflow: hidden;
+    width: 75vw;
+    grid-column: 1/3;
+    .displayImage {
+      width: 75vw;
+      height: 35vh;
+    }
+    p {
+      display: none;
+      width: 0px;
+    }
+  }
 `

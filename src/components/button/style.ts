@@ -5,10 +5,14 @@ interface ButtonData {
   textColor: string
   curve: string
   loading: boolean
-  fontSize: string
-  fontWeight: string
+  fontSize: number
+  fontWeight: number
   iconColor: string
   iconBackgroundColor: string
+  paddingBottom: number
+  paddingTop: number
+  paddingLeft: number
+  paddingRight: number
 }
 
 export const CustomButton = styled("button")`
@@ -38,7 +42,8 @@ export const CustomButton = styled("button")`
   }};
 
   font-weight: ${(props: ButtonData) => props.fontWeight || "400"};
-  font-size: ${(props: ButtonData) => props.fontSize || "20px"};
+  font-size: ${(props: ButtonData) =>
+    props.fontSize ? `${props.fontSize}px` : "16px"};
   line-height: normal;
   font-stretch: normal;
   font-style: normal;
@@ -51,8 +56,9 @@ export const CustomButton = styled("button")`
     outline-style: none;
     outline-width: 0px;
     .buttonText {
-      padding-top: 11px;
-      padding-bottom: 11px;
+      font-weight: ${(props: ButtonData) => props.fontWeight || "400"};
+      font-size: ${(props: ButtonData) =>
+        props.fontSize ? `${props.fontSize + 0.1}px` : "16.1px"};
     }
   }
   &:focus {
@@ -68,16 +74,22 @@ export const CustomButton = styled("button")`
   }
 
   .buttonText {
-    padding-left: 2em;
-    padding-right: 2em;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-left: ${(props: ButtonData) =>
+      props.paddingLeft ? `${props.paddingLeft}em` : "2em"};
+    padding-right: ${(props: ButtonData) =>
+      props.paddingRight ? `${props.paddingRight}em` : "2em"};
+    padding-top: ${(props: ButtonData) =>
+      props.paddingTop ? `${props.paddingTop}em` : "10px"};
+    padding-bottom: ${(props: ButtonData) =>
+      props.paddingBottom ? `${props.paddingBottom}em` : "10px"};
   }
 
   .iconData {
     color: ${(props: ButtonData) => props.textColor || "#fff"};
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: ${(props: ButtonData) =>
+      props.paddingTop ? `${props.paddingTop}em` : "10px"};
+    padding-bottom: ${(props: ButtonData) =>
+      props.paddingBottom ? `${props.paddingBottom}em` : "10px"};
     margin-right: 10px;
   }
 
@@ -85,8 +97,10 @@ export const CustomButton = styled("button")`
     background: ${(props: ButtonData) =>
       props.iconBackgroundColor || "#37A3E959"};
     color: ${(props: ButtonData) => props.iconColor || "#fff"};
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: ${(props: ButtonData) =>
+      props.paddingTop ? `${props.paddingTop}em` : "10px"};
+    padding-bottom: ${(props: ButtonData) =>
+      props.paddingBottom ? `${props.paddingBottom}em` : "10px"};
     padding-right: 17.5px;
     padding-left: 17.5px;
     border-top-right-radius: ${(props: ButtonData) => props.curve || "9px"};

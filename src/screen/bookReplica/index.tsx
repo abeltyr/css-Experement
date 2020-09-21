@@ -28,6 +28,7 @@ const About = () => {
   `)
   return (
     <BackgroundContainer image={data.backgroundImage && data.backgroundImage.sharp.fluid.src} >
+
       <MainContainer>
         <div className="logoContainer">
           <Img fluid={data.logo && data.logo.sharp.fluid} className="logo" />
@@ -41,8 +42,11 @@ const About = () => {
           </p>
         </div>
         <div className="lowerText">
-          <Button text="Join us"
-            backgroundColor="#FCCE7F" textColor="#562703" curve="6px"
+          <Button
+            text="Join us"
+            backgroundColor="#FCCE7F"
+            textColor="#562703"
+            curve="6px"
             loading={false}
             icon=""
             onClick={() => { }} />

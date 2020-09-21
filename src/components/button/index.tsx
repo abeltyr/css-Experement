@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { CustomButton } from "./style"
 
 interface ButtonData {
@@ -9,28 +9,44 @@ interface ButtonData {
   text: string
   onClick: Function
   icon: string
-  fontSize: string
-  fontWeight: string
+  fontSize: number
+  fontWeight: number
   iconColor: string
   iconBackgroundColor: string
   fullIcon: string;
+  paddingBottom: number
+  paddingTop: number
+  paddingLeft: number
+  paddingRight: number
 }
 
 
 const Button = (props: ButtonData) => {
+  const [loading, setLoading] = useState(props.loading)
+  useEffect(() => {
+    setLoading(props.loading)
+  }, [props.loading])
   return (
     <CustomButton
-      aria-disabled={props.loading}
-      disabled={props.loading}
+      aria-disabled={loading}
+      disabled={loading}
       backgroundColor={props.backgroundColor}
       textColor={props.textColor} curve={props.curve}
-      loading={props.loading}
+      loading={loading}
       fontSize={props.fontSize}
       fontWeight={props.fontWeight}
       iconColor={props.iconColor}
+      paddingBottom={props.paddingBottom}
+      paddingTop={props.paddingTop}
+      paddingLeft={props.paddingLeft}
+      paddingRight={props.paddingRight}
       iconBackgroundColor={props.iconBackgroundColor}
-      onClick={() => {
-        if (props.onClick) props.onClick()
+      onClick={async () => {
+        setLoading(true)
+        if (props.onClick) {
+          await props.onClick()
+          setLoading(false)
+        }
       }}>
       <span className="buttonText"  >
         {props.icon &&
@@ -40,9 +56,9 @@ const Button = (props: ButtonData) => {
         {props.text}
       </span>
       {props.fullIcon &&
-        <span className="fullIconData" >
+        <div className="fullIconData" >
           {props.fullIcon}
-        </span>}
+        </div>}
     </CustomButton>
   )
 }
