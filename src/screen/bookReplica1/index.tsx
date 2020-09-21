@@ -38,19 +38,18 @@ const About = () => {
             Toronto's most luxurious rooftop lounge
           </p>
           <div className="lowerText">
-            <Button text="MAKE A Reservation"
+            <Button text="Make A Reservation"
               backgroundColor="#EED5B0" textColor="#5E4219" curve="6px"
               loading={false}
               icon=""
-              fullIcon="&"
-              fontSize=""
-              fontWeight=""
+              fullIcon="->"
               iconColor=""
               iconBackgroundColor="#CEAA75"
               onClick={() => { }} />
           </div>
         </div>
       </LeftContainer>
+      {/* {alert(data.backgroundImage.sharp.fluid.src)} */}
       <RightContainer image={data.backgroundImage && data.backgroundImage.sharp.fluid.src} />
     </MainContainer>
   )

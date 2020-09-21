@@ -8,7 +8,7 @@ const About = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      backgroundImage : file(relativePath: { eq: "background.png" }) {
+      backgroundImage : file(relativePath: { eq: "Waiau.png" }) {
        sharp: childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -46,8 +46,6 @@ const About = () => {
               fontSize="16px"
               fontWeight="800"
               iconColor=""
-              paddingBottom="1em"
-              paddingTop="1em"
               iconBackgroundColor="#CEAA75"
               onClick={() => { }} />
           </div>

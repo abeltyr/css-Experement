@@ -5,22 +5,25 @@ interface imageProsData {
 
 export const MainContainer = styled("div")`
   overflow: hidden;
-  width: 100vw;
+  width: calc(100vw- 20px);
   height: 50vh;
-  border-bottom: 1px solid #eeeeee99;
+  border: 2px solid #eeeeee99;
+  margin: 10px;
   @media screen and (max-width: 800px) {
     height: 100vh;
-    border-bottom: 0px;
   }
 `
 
 export const LeftContainer = styled("div")`
   overflow: hidden;
-  width: 50vw;
+  width: calc(50vw - 30px);
   float: left;
   height: 50vh;
   padding-left: 7.5vw;
-
+  @media screen and (max-width: 800px) {
+    height: 100vh;
+    width: calc(50vw - 30px);
+  }
   .logoContainer {
     position: absolute;
   }

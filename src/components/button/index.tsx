@@ -9,8 +9,8 @@ interface ButtonData {
   text: string
   onClick: Function
   icon: string
-  fontSize: number
-  fontWeight: number
+  fontSize?: number
+  fontWeight?: number
   iconColor: string
   iconBackgroundColor: string
   fullIcon: string;
